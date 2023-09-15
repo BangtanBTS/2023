@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+//Decimal para Binário
+void DecBin(int x){
+	vector<int>vet;
+	while(x>=1){
+		if(x%2==1){
+			vet.push_back(1);
+		}
+		else{ 
+			vet.push_back(0);
+		}
+		x=x/2;
+		//cout<<"x: "<< x<<endl;
+	}
+	for(int i=(int)vet.size()-1; i>=0; i--){
+		cout<<vet[i]<<" ";
+	}
+}
+
+//Decimal para Hexa
+void DecHex(int x){
+	vector<int>vet;
+	int rest=0;
+	while(x>=1){
+		rest=x%16;
+		x=x/16;
+		//cout<<"rest "<<rest<<endl;
+		vet.push_back(rest);
+		//cout<<x<<endl;
+	}
+	//cout<<"size: "<<vet.size()<<endl;
+	for(int i=(int)vet.size()-1; i>=0; i--){
+		cout<<vet[i]<<" ";
+	}
+}
+
+//Binario -> Decimal
+
+int main() {
+	int x;
+	cin>> x;
+	cout<<"Decimal -> Binário"<<endl;
+	DecBin(x);
+	cout<<endl<<endl;
+	cout<<"Decimal -> Hexa"<<endl;
+	DecHex(x);
+}
